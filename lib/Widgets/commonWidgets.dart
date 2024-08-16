@@ -37,3 +37,30 @@ InputDecoration customDecoration(String lable, {bool showLabel=false,bool enterS
       hintText: "${showLabel?"":enterShow?"Enter ${your?"your":""} ":dropDown?"Select ":"" }$lable",
       hintStyle:STYLE_B_14);
 }
+
+showAlertDialog(BuildContext context) {  
+  // Create button  
+  Widget okButton = TextButton(  
+    child: Text("OK"),  
+    onPressed: () {  
+      Navigator.of(context).pop();  
+    },  
+  );  
+  
+  // Create AlertDialog  
+  AlertDialog alert = AlertDialog(  
+    title: Text("Simple Alert"),  
+    content: Text("This is an alert message."),  
+    actions: [  
+      okButton,  
+    ],  
+  );  
+  
+  // show the dialog  
+  showDialog(  
+    context: context,  
+    builder: (BuildContext context) {  
+      return alert;  
+    },  
+  );  
+}  
